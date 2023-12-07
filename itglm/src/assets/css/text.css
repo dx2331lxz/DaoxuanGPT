@@ -1,0 +1,552 @@
+.container{
+    position: fixed;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+
+.history{
+    position:fixed;
+    top:0;
+    left: 0;
+    width:15%;
+    height: 100vh;
+    background-color: black;
+    /* overflow: auto; */
+    box-sizing: border-box;
+    transition: 0.1s;
+    /* 允许x轴溢出 */
+    overflow-x: visible;
+}
+
+/* 侧边栏title */
+.sidebar-title{
+    position: absolute;
+    width: 100%;
+    height: 10%;
+    top: 0;
+    padding: 10px 10px;
+    box-sizing: border-box;
+    z-index: 100;
+    /* border: 1px solid red; */
+}
+
+.sidebar-title-back{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(10px); 
+    border-radius: 8px;
+    z-index: 100;
+    padding: 10px 10px;
+    box-sizing: border-box;
+
+}
+
+.sidebar-title-back:hover{
+    background-color: rgba(255, 255, 255, 0.2); /* 背景色透明度，越小越透明 */
+}
+
+.sidebar-title-icon{
+    position: absolute;
+    left: 5px;
+    color: white;
+    top: 50%;
+    transform: translate(0%, -50%);
+}
+
+.sidebar-title-icon-add{
+    position: absolute;
+    right: 10px;
+    color: white;
+    top: 50%;
+    transform: translate(0%, -50%);
+}
+
+.icon-size{
+    font-size: 14px;
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    transform: translate(0%, -50%);
+}
+
+.sidebar-title-text{
+    color: white;
+    position: absolute;
+    top: 50%;
+    transform: translate(0%, -50%);
+    left: 35px;
+    font-size: 14px;
+}
+
+/* 分割线css */
+.separator{
+    position: absolute;
+    top: 10%;
+    width: 100%;
+    border-top: 1px solid white;
+    /* 透明度 */
+    opacity: 0.5;
+}
+/* 侧边栏内容 */
+.sidebar-contents{
+    position: absolute;
+    width: 100%;
+    height: 90%;
+    top: 10%;
+    padding: 10px 10px;
+    box-sizing: border-box;
+    overflow-y:scroll;
+    z-index: 100;
+    overflow-x: visible;
+}
+
+.sidebar-content{
+    /* 字体颜色 */
+    position: absolute;
+    color: white;
+    top: 50%;
+    width: 100%;
+    height: 90%;
+    transform: translate(0%, -50%);
+    z-index: 200;
+    border-radius: 8px;
+    padding: 5px 10px;
+    backdrop-filter: blur(10px); 
+    transition: 0.2s;
+    box-sizing: border-box;
+    font-size: 14px;
+    /* 字体居中 */
+    display: flex;
+    align-items: center;
+    /* 不能换行 */
+    white-space: nowrap;
+    /* overflow: visible; */
+}
+
+.sidebar-content:hover{
+    background-color: rgba(255, 255, 255, 0.2); /* 背景色透明度，越小越透明 */
+}
+
+.sidebar-content-checked{
+    background-color: rgba(255, 255, 255, 0.2); /* 背景色透明度，越小越透明 */
+    backdrop-filter: blur(10px);
+}
+
+
+.history_message{
+    position: relative;
+    /* width: 100%; */
+    height: 40px;
+    /* margin-bottom: 10px; */
+    z-index: 200;
+    box-sizing: border-box;
+    overflow-x: visible;
+}
+/* 滚动条 */
+.sidebar-contents::-webkit-scrollbar-track
+{
+    /* 隐藏 */
+    display: none;
+}
+.sidebar-contents::-webkit-scrollbar
+{
+	width: 10px;
+    transition: 0.3s;
+	/* 透明 */
+    /* background-color: transparent; */
+}
+
+.sidebar-contents::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+    /* background-color: ; */
+    /* 浅灰色 */
+    background-color: rgba(225, 225, 225, 0.2);
+}
+
+.sidebar-contents::-webkit-scrollbar-thumb:hover
+{
+    /* background-color: ; */
+    /* 深灰色 */
+    background-color: rgba(225, 225, 225, 0.4);
+}
+/* 更多 */
+.sidebar-content-more{
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translate(0%, -50%);
+    z-index: 400;
+    overflow-x: visible;
+}
+.sidebar-content-more-icon{
+    color: rgba(225, 225, 225, 0.4);
+}
+
+.sidebar-content-more-icon:hover{
+    color: rgba(225, 225, 225, 0.6);
+}
+
+/* 点击更多之后的框 */
+#more-content{
+    /* 阴影 */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    width: 200px;
+    background-color: white;
+    z-index: 999;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+
+ul{
+    list-style: none;
+    padding: 0;
+    margin: 2px;
+}
+
+ul li{
+    margin: 5px;
+    border-radius: 5px;
+    border: 1px solid white;
+    padding: 10px 10px;
+    box-sizing: border-box;
+    font-size: 18px;
+    /* 字体居中 */
+    display: flex;
+    /* 上下居中左右居中 */
+    align-items: center;
+    justify-content: center;
+
+    /* 不能换行 */
+    white-space: nowrap;
+    /* overflow: visible; */
+}
+
+li:hover{
+    background-color: rgba(225, 225, 225, 0.2);
+    border: 1px solid #000;
+}
+
+
+
+.dialog {
+    position: fixed;
+    /* 画出边框 */
+    /* border: 1px solid #ccc; */
+    /* 占据右边大半部分 */
+    width: 85%;
+    /* 高度占据整个页面 */
+    height: 100vh;
+    top: 0;
+    right: 0;
+    /* 背景色 */
+    background-color: #fff;
+    overflow: auto;
+    transition: 0.1s;
+    z-index: 0;
+}
+
+.dialog-contentdialog-content {
+    /* 使得文字不会超出边界 */
+    overflow: auto;
+}
+
+.sidebar{
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(0%, -50%);
+    z-index: 100;
+}
+
+.inputtext {
+    /* border: 1px solid red; */
+    position: absolute;
+    bottom: 5%;
+    left: 0;
+    width: 100%;
+    height: 15%;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.input {
+    position: absolute;
+    top: 50%;
+    right: 22%;
+    left: 22%;
+    transform: translate(0%, -40%);
+    height: 80%;
+    /* border: 1px solid black; */
+}
+
+textarea {
+    resize: none;
+    /* 禁止用户调整文本区域大小 */
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid purple;
+    width: 100%;
+    height: 100%;
+    /* border: none; */
+    outline: none;
+    padding: 10px 10px;
+    box-sizing: border-box;
+    /* 圆角 */
+    border-radius: 10px;
+}
+
+
+
+
+.submit {
+    position: absolute;
+    width: 40px;
+    height: 30px;
+    top: 50%;
+    right: 0;
+    transform: translate(-50%, -50%);
+
+}
+
+
+
+#app {
+    position: absolute;
+    top: 40%;
+    left: 0;
+    right: 0;
+    height: 75%;
+    transform: translate(0%, -50%);
+    margin: auto;
+    /* border: 1px solid #ccc; */
+    padding: 10px;
+    overflow-y: scroll;
+    /* 始终显示垂直滚动条 */
+    scroll-behavior: smooth;
+    /* 平滑滚动效果，可选 */
+    max-height: 75%;
+    z-index: 100;
+}
+
+/* 滚动条样式 */
+
+#app::-webkit-scrollbar-track
+{
+    /* 隐藏 */
+    display: none;
+}
+#app::-webkit-scrollbar
+{
+	width: 6px;
+	/* 透明 */
+    background-color: transparent;
+}
+
+#app::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+    /* background-color: ; */
+    /* 浅灰色 */
+    background-color: #ccc;
+}
+
+
+.message {
+    font-size: 14px;
+    position: relative;
+    left: 23%;
+    max-width: 54%;
+    margin-bottom: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    display: flex;
+    /* 使用 Flexbox 布局 */
+    word-wrap: break-word;
+    /* 自动换行 */
+    word-break: break-all;
+    /* 避免单词断开 */
+    overflow: hidden;
+    /* 避免文字溢出 */
+}
+
+.user-message {
+    padding: 7px 0 0 10px;
+    /* background-color: #e0f7fa; */
+    /*  */
+}
+
+.bot-message {
+    padding: 7px 0 0 10px;
+    /* 背景色 */
+    /* background-color: #c8e6c9; */
+}
+
+.justify-center {
+    -webkit-text-size-adjust: 100%;
+    font-feature-settings: normal;
+    font-family: Söhne, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, Helvetica Neue, Arial, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+    font-variation-settings: normal;
+    tab-size: 4;
+    --white: #fff;
+    --black: #000;
+    --gray-50: #f7f7f8;
+    --gray-100: #ececf1;
+    --gray-200: #d9d9e3;
+    --gray-300: #c5c5d2;
+    --gray-400: #acacbe;
+    --gray-500: #8e8ea0;
+    --gray-600: #565869;
+    --gray-700: #40414f;
+    --gray-800: #343541;
+    --gray-900: #202123;
+    --gray-950: #050509;
+    --gizmo-gray-500: #999;
+    --gizmo-gray-600: #666;
+    --gizmo-gray-950: #0f0f0f;
+    --text-primary: var(--gizmo-gray-950);
+    --text-secondary: var(--gizmo-gray-600);
+    --text-tertiary: var(--gizmo-gray-500);
+    --surface-primary: var(--white);
+    --surface-secondary: var(--gray-50);
+    --surface-tertiary: var(--gray-100);
+    --border-light: rgba(0, 0, 0, .1);
+    --border-medium: rgba(0, 0, 0, .15);
+    --border-heavy: rgba(0, 0, 0, .2);
+    --border-xheavy: rgba(0, 0, 0, .25);
+    color-scheme: light;
+    line-height: inherit;
+    -webkit-font-smoothing: antialiased;
+    border: 0 solid #d9d9e3;
+    box-sizing: border-box;
+    --tw-border-spacing-x: 0;
+    --tw-border-spacing-y: 0;
+    --tw-translate-x: 0;
+    --tw-translate-y: 0;
+    --tw-rotate: 0;
+    --tw-skew-x: 0;
+    --tw-skew-y: 0;
+    --tw-scale-x: 1;
+    --tw-scale-y: 1;
+    --tw-pan-x: ;
+    --tw-pan-y: ;
+    --tw-pinch-zoom: ;
+    --tw-scroll-snap-strictness: proximity;
+    --tw-gradient-from-position: ;
+    --tw-gradient-via-position: ;
+    --tw-gradient-to-position: ;
+    --tw-ordinal: ;
+    --tw-slashed-zero: ;
+    --tw-numeric-figure: ;
+    --tw-numeric-spacing: ;
+    --tw-numeric-fraction: ;
+    --tw-ring-inset: ;
+    --tw-ring-offset-width: 0px;
+    --tw-ring-offset-color: #fff;
+    --tw-ring-color: rgba(69, 89, 164, .5);
+    --tw-ring-offset-shadow: 0 0 transparent;
+    --tw-ring-shadow: 0 0 transparent;
+    --tw-shadow: 0 0 transparent;
+    --tw-shadow-colored: 0 0 transparent;
+    --tw-blur: ;
+    --tw-brightness: ;
+    --tw-contrast: ;
+    --tw-grayscale: ;
+    --tw-hue-rotate: ;
+    --tw-invert: ;
+    --tw-saturate: ;
+    --tw-sepia: ;
+    --tw-drop-shadow: ;
+    --tw-backdrop-blur: ;
+    --tw-backdrop-brightness: ;
+    --tw-backdrop-contrast: ;
+    --tw-backdrop-grayscale: ;
+    --tw-backdrop-hue-rotate: ;
+    --tw-backdrop-invert: ;
+    --tw-backdrop-opacity: ;
+    --tw-backdrop-saturate: ;
+    --tw-backdrop-sepia: ;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.avatar-img {
+    /* 头像样式 */
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.file {
+    position: absolute;
+    top: -26px;
+    left: 0;
+    transform: translate(-50%, -50%);
+}
+
+.upload_file {
+    display: inline-block;
+    border-width: 1px;
+    /* 上下边界为直线，左右边界为弧线 */
+    border-style: solid;
+    border-radius: 20px;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80px;
+    height: 25px;
+}
+
+.file_icon {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translate(0%, -50%);
+    /* width: 5px;
+    height: 5px; */
+}
+
+.icon_txt {
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    transform: translate(0%, -50%);
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.overlay {
+    /* position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; */
+    background-color: transparent;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.upload_file:hover {
+    border-color: purple;
+}
+
+.upload_file:hover .overlay {
+    /* 文字或图标变色 */
+    color: purple;
+}

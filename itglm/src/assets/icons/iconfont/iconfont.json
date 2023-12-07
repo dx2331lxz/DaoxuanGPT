@@ -1,0 +1,58 @@
+{
+  "id": "4352199",
+  "name": "1",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "77822",
+      "name": "更多",
+      "font_class": "gengduo",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "1254739",
+      "name": "21输入",
+      "font_class": "21shuru",
+      "unicode": "e615",
+      "unicode_decimal": 58901
+    },
+    {
+      "icon_id": "1128596",
+      "name": "侧边栏收起",
+      "font_class": "cebianlanshouqi",
+      "unicode": "e7af",
+      "unicode_decimal": 59311
+    },
+    {
+      "icon_id": "1128597",
+      "name": "侧边栏展开",
+      "font_class": "cebianlanzhankai",
+      "unicode": "e7b0",
+      "unicode_decimal": 59312
+    },
+    {
+      "icon_id": "1727451",
+      "name": "219上传、导出",
+      "font_class": "shangchuandaochu",
+      "unicode": "e8c6",
+      "unicode_decimal": 59590
+    },
+    {
+      "icon_id": "19460948",
+      "name": "上传",
+      "font_class": "shangchuan",
+      "unicode": "f0e8",
+      "unicode_decimal": 61672
+    },
+    {
+      "icon_id": "12719937",
+      "name": "发送",
+      "font_class": "fasong",
+      "unicode": "e60d",
+      "unicode_decimal": 58893
+    }
+  ]
+}

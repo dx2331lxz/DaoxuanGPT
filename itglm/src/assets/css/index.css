@@ -1,0 +1,76 @@
+.input-image {
+    /* 编写border */
+    border: 1px solid #ccc;
+    /* 宽度为页面一半 */
+    width: 50%;
+    /* 设置半透明效果的悬浮框 */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* 设置悬浮框的位置 */
+    position: absolute;
+    /* 设置悬浮框的位置 */
+    top: 4%;
+    left: 4%;
+    /* 设置悬浮框相对于自身宽高的偏移 */
+    transform: translate(-4%, -4%);
+    /* 设置悬浮框的内边距 */
+    padding: 20px;
+    /* 设置悬浮框的圆角 */
+    border-radius: 10px;
+    /* 设置悬浮框的阴影 */
+    box-shadow: 0 0 10px #999;
+    /* 设置悬浮框的z轴高度 */
+    z-index: 999;
+    /* 设置悬浮框的背景颜色 */
+    background-color: #fff;
+    /* 设置悬浮框大小 */
+    height: 400px;
+    /* 设置悬浮框大小 */
+
+
+}
+
+#input {
+    /* 设置选择文件按键为一个范围点击框 */
+    width: 100%;
+    /* 设置选择文件按键为一个范围点击框 */
+    height: 100%;
+    /* 设置选择文件按键为一个范围点击框 */
+    opacity: 0;
+    /* 设置选择文件按键为一个范围点击框 */
+    position: absolute;
+    /* 设置选择文件按键为一个范围点击框 */
+    top: 0;
+    /* 设置选择文件按键为一个范围点击框 */
+    left: 0;
+}
+
+.upload-label {
+    position: relative;
+    width: 50%;
+    /* 你的 div 宽度 */
+    height: 400px;
+    /* 你的 div 高度 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    /* 隐藏伪元素溢出部分 */
+}
+
+.upload-label::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.5); /* 背景颜色，可以调整透明度 */
+    filter: blur(5px); /* 模糊效果，可以调整模糊程度 */
+    z-index: -1; /* 将伪元素置于底层，使文字在上层 */
+  }
+
+.label-text {
+    z-index: 1;
+    /* 保证文字在上层 */
+    position: relative;
+    /* 使 z-index 生效 */
+    /* 可以添加其他样式，例如字体大小、颜色等 */
+}
